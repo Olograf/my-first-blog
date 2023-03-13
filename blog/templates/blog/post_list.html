@@ -9,21 +9,13 @@
     <div>
         <h1><a href="/">OLO</a></h1>
     </div>
-
-    <div>
-        <p>published: 21.02.2023, 12:14</p>
-        <h2><a href="">Post 1</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
-            gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-            massa justo sit amet risus.</p>
-    </div>
-
-    <div>
-        <p>published: 21.02.2023, 12:14</p>
-        <h2><a href="">Kolejny post</a></h2>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
-            gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    </div>
+    {% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+    {% endfor %}
 </body>
 
 </html>
